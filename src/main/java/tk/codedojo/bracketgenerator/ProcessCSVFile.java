@@ -3,25 +3,25 @@ package tk.codedojo.bracketgenerator;
 import java.util.*;
 import java.io.*;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
 import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
 
 public class ProcessCSVFile {
     private static final Logger logger = Logger.getLogger(ProcessCSVFile.class.getName());
     private static final BracketManager bracketManager = BracketManager.getInstance();
-    private final Config config;
+    private final String inputFilename;
+    private final String outputFilename;
 
-    public ProcessCSVFile() throws IOException {
-        InputStream stream = new Utils().getFileFromResourceAsStream("config.json");
-        this.config = new ObjectMapper().readValue(stream, Config.class);
+    public ProcessCSVFile(String inputFilename, String outputFilename){
+        this.inputFilename = inputFilename;
+        this.outputFilename = outputFilename;
     }
 
     public void processFile() throws IOException{
         String line;
         BufferedReader bufferedReader;
         FileReader fileReader;
-        fileReader = new FileReader(config.inputFile);
+        fileReader = new FileReader(this.inputFilename);
         bufferedReader = new BufferedReader(fileReader);
         line = bufferedReader.readLine();
 
@@ -59,6 +59,6 @@ public class ProcessCSVFile {
         ProcessCSVFile.bracketManager.numberMatches();
         OutputJSON outputJSON = new OutputJSON();
         ProcessCSVFile.bracketManager.setupOutput(outputJSON);
-        outputJSON.outputBrackets(config.outputFile);
+        outputJSON.outputBrackets(this.outputFilename);
     }
 }
