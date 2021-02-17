@@ -5,9 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tk.codedojo</groupId>
-    <artifactId>BracketGeneratorJava</artifactId>
+    <artifactId>BracketGenerator</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -49,7 +52,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.16</version>
+            <version>[1.18.2,)</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
