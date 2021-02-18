@@ -1,6 +1,6 @@
 Feature: Command Line Test
   Check that the application works as expected once packaged
-
+  @functional
   Scenario: Simple input file
     Given I have the following data in my input file
       | Division | Type | Players              |
