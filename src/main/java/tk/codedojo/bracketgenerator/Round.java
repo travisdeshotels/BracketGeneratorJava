@@ -7,7 +7,6 @@ import java.util.*;
 
 @Getter
 @Setter
-@ToString
 public class Round {
     private List<Match> matches;
     private int currentMatch;
@@ -64,5 +63,12 @@ public class Round {
      */
     protected boolean isDone(){
         return currentMatch >= matches.size();
+    }
+
+    @Override
+    public String toString() {
+        return "Round{" +
+                "matches=" + matches +
+                '}';
     }
 }
