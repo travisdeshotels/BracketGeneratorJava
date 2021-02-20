@@ -4,8 +4,11 @@ import org.junit.*;
 import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class BracketManagerTest {
@@ -15,21 +18,9 @@ public class BracketManagerTest {
         myBracketManager = BracketManager.getInstance();
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         myBracketManager.clearBrackets();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     /**
@@ -44,50 +35,50 @@ public class BracketManagerTest {
         System.out.println("addBracket");
         String divisionName = "";
         String bracketType = "";
-        ArrayList players = null;
+        List<String> players = null;
 
         try {
             myBracketManager.addBracket(divisionName, bracketType, players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
         try {
             myBracketManager.addBracket("alpha", "SE", players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
-        players = new ArrayList(2);
+        players = new ArrayList<>(2);
         players.add("bob"); players.add("tom");
         try {
             myBracketManager.addBracket("alpha", bracketType, players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
         try {
             myBracketManager.addBracket("", "SE", players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
         try {
             myBracketManager.addBracket(divisionName, bracketType, players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
         players.clear();
         try {
             myBracketManager.addBracket(divisionName, "SE", players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
         try {
             myBracketManager.addBracket("alpha", bracketType, players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
@@ -97,11 +88,11 @@ public class BracketManagerTest {
         try {
             myBracketManager.addBracket(divisionName, "SE", players);
         } catch (Exception e){
-            assertTrue(false);
+            fail();
         }
         try {
             myBracketManager.addBracket(divisionName, bracketType, players);
-            assertTrue(false);
+            fail();
         } catch (Exception e){
             assertTrue(e instanceof BadBracketDataException);
         }
@@ -118,23 +109,23 @@ public class BracketManagerTest {
         BracketType myBracket;
         Round myRound;
         Match myMatch;
-        ArrayList players = new ArrayList(2);
+        List<String> players = new ArrayList<>(2);
         players.add("who");
         players.add("where");
         myBracketManager.addBracket(divisionName, bracketType, players);
         myBracketManager.firstBracket();
         assertFalse(myBracketManager.isDone());
         myBracket = myBracketManager.getCurrentBracket();
-        assertTrue(myBracket.getBracketName().equals("alpha"));
-        assertTrue(myBracket.getRoundCount() == 1);
+        assertEquals("alpha", myBracket.getBracketName());
+        assertEquals(1, myBracket.getRoundCount());
         myBracket.firstRound();
         myRound = myBracket.getCurrentRound();
-        assertTrue(myRound.getMatchCount() == 1);
+        assertEquals(1, myRound.getMatchCount());
         myRound.firstMatch();
         assertFalse(myRound.isDone());
         myMatch = myRound.getCurrentMatch();
-        assertTrue(myMatch.getPlayer1().equals("who"));
-        assertTrue(myMatch.getPlayer2().equals("where"));
+        assertEquals("who", myMatch.getPlayer1());
+        assertEquals("where", myMatch.getPlayer2());
         myRound.nextMatch();
         assertTrue(myRound.isDone());
         myBracketManager.nextBracket();
@@ -154,42 +145,47 @@ public class BracketManagerTest {
         BracketType myBracket;
         Round myRound;
         Match myMatch;
-        ArrayList players = new ArrayList(2);
+        List<String> players = new ArrayList<>(2);
         players.add("why");
         players.add("whom");
         myBracketManager.addBracket(divisionName, bracketType, players);
+        myBracketManager.numberMatches();
         //Test general bracket data.
         myBracketManager.firstBracket();
         assertFalse(myBracketManager.isDone());
         myBracket = myBracketManager.getCurrentBracket();
-        assertTrue(myBracket.getBracketName().equals("beta"));
-        assertTrue(myBracket.getRoundCount() == 3);
+        System.out.println(myBracket.getRounds().toString());
+        assertEquals("beta", myBracket.getBracketName());
+        assertEquals(3, myBracket.getRoundCount());
         myBracket.firstRound();
         myRound = myBracket.getCurrentRound();
-        assertTrue(myRound.getMatchCount() == 1);
+        assertEquals(1, myRound.getMatchCount());
         myRound.firstMatch();
         assertFalse(myRound.isDone());
         //Test match of first round.
         myMatch = myRound.getCurrentMatch();
-        assertTrue(myMatch.getPlayer1().equals("why"));
-        assertTrue(myMatch.getPlayer2().equals("whom"));
+        assertEquals("why", myMatch.getPlayer1());
+        assertEquals("whom", myMatch.getPlayer2());
+        assertEquals(1,myMatch.getMatchNumber());
         myRound.nextMatch();
         assertTrue(myRound.isDone());
         myBracket.nextRound();
         myRound = myBracket.getCurrentRound();
-        assertTrue(myRound.getMatchCount() == 1);
+        assertEquals(1, myRound.getMatchCount());
         myRound.firstMatch();
         //Test match of second round.
         myMatch = myRound.getCurrentMatch();
+        assertEquals(2,myMatch.getMatchNumber());
         assertTrue(myMatch.playerNamesAreNull());
         myRound.nextMatch();
         assertTrue(myRound.isDone());
         myBracket.nextRound();
         myRound = myBracket.getCurrentRound();
-        assertTrue(myRound.getMatchCount() == 1);
+        assertEquals(1, myRound.getMatchCount());
         myRound.firstMatch();
         //Test match of third round.
         myMatch = myRound.getCurrentMatch();
+        assertEquals(3, myMatch.getMatchNumber());
         assertTrue(myMatch.playerNamesAreNull());
         myRound.nextMatch();
         assertTrue(myRound.isDone());
