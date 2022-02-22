@@ -1,13 +1,17 @@
 package tk.codedojo.bracketgenerator;
 
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.List;
+import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
 
 public class ProcessCSVFile {
-    private static final Logger logger = Logger.getLogger(ProcessCSVFile.class.getName());
+    private static final Logger logger = LogManager.getLogger(ProcessCSVFile.class.getName());
     private static final BracketManager bracketManager = BracketManager.getInstance();
     private final String inputFilename;
     private final String outputFilename;
@@ -17,7 +21,7 @@ public class ProcessCSVFile {
         this.outputFilename = outputFilename;
     }
 
-    public void processFile() throws IOException{
+    public void processFile() throws IOException {
         String line;
         BufferedReader bufferedReader;
         FileReader fileReader;

@@ -206,7 +206,7 @@ public class BracketManagerTest {
         BracketType myBracket;
         Round myRound;
         Match myMatch;
-        ArrayList players = new ArrayList(3);
+        List<String> players = new ArrayList<>(3);
         players.add("1");
         players.add("2");
         players.add("3");
@@ -260,7 +260,7 @@ public class BracketManagerTest {
         String bracketType = "DE";
         BracketType myBracket;
         Round myRound;
-        ArrayList players = new ArrayList(4);
+        List<String> players = new ArrayList<>(4);
         players.add("A"); players.add("B");
         players.add("C"); players.add("D");
         myBracketManager.addBracket(divisionName, bracketType, players);
@@ -304,7 +304,7 @@ public class BracketManagerTest {
         BracketType myBracket;
         Round myRound;
         Match myMatch;
-        ArrayList players = new ArrayList(5);
+        List<String> players = new ArrayList<>(5);
         players.add("ichi"); players.add("ni");
         players.add("san"); players.add("shi");
         players.add("go");
@@ -377,7 +377,7 @@ public class BracketManagerTest {
         String bracketType = "DE";
         BracketType myBracket;
         Round myRound;
-        ArrayList players = new ArrayList(7);
+        List<String> players = new ArrayList<>(7);
         players.add("a"); players.add("b"); players.add("c");
         players.add("d"); players.add("e"); players.add("f");
         players.add("g");
@@ -427,7 +427,7 @@ public class BracketManagerTest {
         String bracketType = "SE";
         BracketType myBracket;
         Round myRound;
-        ArrayList players = new ArrayList(9);
+        List<String> players = new ArrayList<>(9);
         players.add("za"); players.add("yb"); players.add("xc");
         players.add("vd"); players.add("ue"); players.add("tf");
         players.add("rg"); players.add("qh"); players.add("pi");
@@ -469,7 +469,7 @@ public class BracketManagerTest {
         String bracketType = "SE";
         BracketType myBracket;
         Round myRound;
-        ArrayList players = new ArrayList(13);
+        List players = new ArrayList<>(13);
         players.add("1331"); players.add("1221"); players.add("1111");
         players.add("1001"); players.add("0990"); players.add("0880");
         players.add("0770"); players.add("0660"); players.add("0550");
@@ -513,7 +513,7 @@ public class BracketManagerTest {
         String bracketType = "SE";
         BracketType myBracket;
         Round myRound;
-        ArrayList players = new ArrayList(16);
+        List players = new ArrayList<>(16);
         players.add("z"); players.add("y"); players.add("x"); players.add("w");
         players.add("v"); players.add("u"); players.add("t"); players.add("s");
         players.add("r"); players.add("q"); players.add("p"); players.add("o");
@@ -555,7 +555,7 @@ public class BracketManagerTest {
         BracketType myBracket;
         Round myRound;
         Match myMatch;
-        ArrayList players = new ArrayList(4);
+        List<String> players = new ArrayList<>(4);
         players.add("Robert");
         players.add("Steven");
         players.add("William");
@@ -599,7 +599,7 @@ public class BracketManagerTest {
         Round myRound;
         Match myMatch;
         //build bracket 1
-        ArrayList players = new ArrayList(8);
+        List<String> players = new ArrayList<>(8);
         players.add("bob"); players.add("rob");
         players.add("tob"); players.add("cob");
         players.add("bobbob"); players.add("robrob");
@@ -607,7 +607,7 @@ public class BracketManagerTest {
         myBracketManager.addBracket(divisionName, bracketType, players);
         //build bracket 2
         divisionName = "fourplayers";
-        players = new ArrayList(4);
+        players = new ArrayList<>(4);
         players.add("bill");
         players.add("phill");
         players.add("jill");
@@ -697,25 +697,25 @@ public class BracketManagerTest {
         Round myRound;
         Match myMatch;
         //build bracket 1
-        ArrayList players = new ArrayList(4);
+        List<String> players = new ArrayList<>(4);
         players.add("1"); players.add("2");
         players.add("3"); players.add("4");
         myBracketManager.addBracket(divisionName, bracketType, players);
         //build bracket 2
         divisionName = "two";
-        players = new ArrayList(2);
+        players = new ArrayList<>(2);
         players.add("a");
         players.add("b");
         myBracketManager.addBracket(divisionName, bracketType, players);
         //build bracket 3
         divisionName = "three";
-        players = new ArrayList(2);
+        players = new ArrayList<>(2);
         players.add("c");
         players.add("d");
         myBracketManager.addBracket(divisionName, bracketType, players);
         //build bracket 4
         divisionName = "four";
-        players = new ArrayList(4);
+        players = new ArrayList<>(4);
         players.add("5"); players.add("6");
         players.add("7"); players.add("8");
         myBracketManager.addBracket(divisionName, bracketType, players);

@@ -1,7 +1,8 @@
 package tk.codedojo.bracketgenerator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class OutputJSON {
 
     public void outputBrackets(String outFile) {
         ObjectMapper mapper = new ObjectMapper();
-        Logger logger = Logger.getLogger(OutputJSON.class.getName());
+        Logger logger = LogManager.getLogger(OutputJSON.class.getName());
 
         try {
             mapper.writeValue(new File(outFile), brackets);
