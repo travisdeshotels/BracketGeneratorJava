@@ -92,3 +92,4 @@ src/main/resources/META-INF
 build
 csvout
 jsonout
+output.json
