@@ -1,10 +1,10 @@
 package tk.codedojo.bracketgenerator;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertFalse;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class RoundTest {
 
@@ -30,8 +30,8 @@ public class RoundTest {
         instance.firstMatch();
         assertFalse(instance.isDone());
         myMatch = instance.getCurrentMatch();
-        assertTrue(myMatch.getPlayer1().equals("abc"));
-        assertTrue(myMatch.getPlayer2().equals("def"));
+        assertEquals("abc", myMatch.getPlayer1());
+        assertEquals("def", myMatch.getPlayer2());
         instance.nextMatch();
         assertTrue(instance.isDone());
     }
@@ -50,13 +50,13 @@ public class RoundTest {
         assertFalse(instance.isDone());
         instance.firstMatch();
         myMatch = instance.getCurrentMatch();
-        assertTrue(myMatch.getPlayer1().equals("bob"));
-        assertTrue(myMatch.getPlayer2().equals("tom"));
+        assertEquals("bob", myMatch.getPlayer1());
+        assertEquals("tom", myMatch.getPlayer2());
         instance.nextMatch();
         assertFalse(instance.isDone());
         myMatch = instance.getCurrentMatch();
-        assertTrue(myMatch.getPlayer1().equals("rob"));
-        assertTrue(myMatch.getPlayer2().equals("joe"));
+        assertEquals("rob", myMatch.getPlayer1());
+        assertEquals("joe", myMatch.getPlayer2());
         instance.nextMatch();
         assertTrue(instance.isDone());
     }

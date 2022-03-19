@@ -1,11 +1,8 @@
 package tk.codedojo.bracketgenerator;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
-import static org.junit.Assert.assertFalse;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MatchTest {
 
@@ -21,8 +18,8 @@ public class MatchTest {
         Match instance = new Match();
         assertTrue(instance.playerNamesAreNull());
         instance = new Match("A", "B");
-        assertTrue(instance.getPlayer1().equals("A"));
-        assertTrue(instance.getPlayer2().equals("B"));
+        assertEquals("A", instance.getPlayer1());
+        assertEquals("B", instance.getPlayer2());
     }
 
     /**
