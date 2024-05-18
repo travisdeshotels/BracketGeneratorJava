@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 
 import org.junit.jupiter.api.Test;
 

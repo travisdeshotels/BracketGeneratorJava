@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;

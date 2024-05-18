@@ -35,7 +35,7 @@
                             <transformers>
                                 <transformer implementation=
                                                      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>tk.codedojo.bracketgenerator.driver.Driver</mainClass>
+                                    <mainClass>io.github.travisdeshotels.bracketgenerator.driver.Driver</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -83,6 +83,18 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
             <version>7.2.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.10.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>1.10.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

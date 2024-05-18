@@ -1,6 +1,6 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 
-import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
+import io.github.travisdeshotels.bracketgenerator.exception.BadBracketDataException;
 
 import java.util.*;
 

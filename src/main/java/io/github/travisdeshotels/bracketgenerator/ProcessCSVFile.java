@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
+import io.github.travisdeshotels.bracketgenerator.exception.BadBracketDataException;
 
 public class ProcessCSVFile {
     private static final Logger logger = LogManager.getLogger(ProcessCSVFile.class.getName());

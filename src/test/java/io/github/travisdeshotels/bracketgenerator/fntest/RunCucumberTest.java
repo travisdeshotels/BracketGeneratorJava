@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator.fntest;
+package io.github.travisdeshotels.bracketgenerator.fntest;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

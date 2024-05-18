@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator.exception;
+package io.github.travisdeshotels.bracketgenerator.exception;
 
 public class BadBracketDataException extends Exception{
     public BadBracketDataException(String msg){

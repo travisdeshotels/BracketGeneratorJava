@@ -1,9 +1,9 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import tk.codedojo.bracketgenerator.exception.BadBracketDataException;
+import io.github.travisdeshotels.bracketgenerator.exception.BadBracketDataException;
 
 import java.util.ArrayList;
 import java.util.List;

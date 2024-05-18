@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator.steps;
+package io.github.travisdeshotels.bracketgenerator.fntest.steps;
 
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import io.cucumber.datatable.DataTable;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import tk.codedojo.bracketgenerator.SingleElimination;
+import io.github.travisdeshotels.bracketgenerator.SingleElimination;
 
 import java.io.BufferedWriter;
 import java.io.File;

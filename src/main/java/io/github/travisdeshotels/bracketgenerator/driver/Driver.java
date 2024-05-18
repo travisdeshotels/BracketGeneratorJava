@@ -1,7 +1,7 @@
-package tk.codedojo.bracketgenerator.driver;
+package io.github.travisdeshotels.bracketgenerator.driver;
 
-import tk.codedojo.bracketgenerator.ProcessCSVFile;
-import tk.codedojo.bracketgenerator.exception.MissingArgumentsException;
+import io.github.travisdeshotels.bracketgenerator.ProcessCSVFile;
+import io.github.travisdeshotels.bracketgenerator.exception.MissingArgumentsException;
 
 import java.io.IOException;
 

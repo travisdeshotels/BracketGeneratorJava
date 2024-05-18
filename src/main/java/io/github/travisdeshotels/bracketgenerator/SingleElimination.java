@@ -1,4 +1,4 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 import java.util.*;
 
 

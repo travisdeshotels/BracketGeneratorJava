@@ -1,7 +1,6 @@
-package tk.codedojo.bracketgenerator;
+package io.github.travisdeshotels.bracketgenerator;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.*;
 
